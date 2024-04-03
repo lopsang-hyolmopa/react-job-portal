@@ -9,7 +9,7 @@ const Navbar = () => {
       : "text-white hover:underline hover:underline-offset-8 hover:decoration-2 px-4 py-2";
 
   return (
-    <nav className="bg-rose-700 border-b border-rose-500">
+    <nav className="bg-rose-700">
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div className="flex h-20 items-center justify-betweeen">
           <div className="flex flex-1 items-center justify-center md:items-stretch md:justify-start">
@@ -20,7 +20,7 @@ const Navbar = () => {
               </span>
             </NavLink>
             <div className="md:ml-auto">
-              <div className="flex space-x-4">
+              <div className="flex space-x-2">
                 <NavLink to="/" className={linkClass}>
                   Home
                 </NavLink>
@@ -35,7 +35,7 @@ const Navbar = () => {
                 </NavLink>
                 <NavLink
                   to="/add-job"
-                  className="bg-rose-700 border border-white text-white rounded-md px-4 py-2 hover:bg-white hover:text-rose-700"
+                  className="text-rose-700 border border-white bg-white rounded-md px-4 py-2 hover:text-white hover:bg-rose-700"
                 >
                   Add Job
                 </NavLink>
