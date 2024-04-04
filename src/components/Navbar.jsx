@@ -10,37 +10,27 @@ const Navbar = () => {
 
   return (
     <nav className="bg-rose-700">
-      <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-        <div className="flex h-20 items-center justify-betweeen">
-          <div className="flex flex-1 items-center justify-center md:items-stretch md:justify-start">
-            <NavLink className="flex flex-shrink-0 items-center mr-4" to="/">
-              <img className="h-10 w-auto" src={logo} alt="React Jobs Logo" />
-              <span className="hidden md:block text-white text-2xl font-bold ml-2">
-                React Jobs
-              </span>
+      <div className="flex h-20 items-center justify-between mx-auto max-w-7xl px-8 lg:px-0">
+        <NavLink to="/" className="flex flex-shrink-0 items-center mr-4">
+          <img className="h-10 w-auto" src={logo} alt="React Jobs Logo" />
+          <span className="hidden md:block text-white text-2xl font-bold ml-2">
+            React Jobs
+          </span>
+        </NavLink>
+        <div className="md:ml-auto">
+          <div className="flex space-x-2">
+            <NavLink to="/" className={linkClass}>
+              Home
             </NavLink>
-            <div className="md:ml-auto">
-              <div className="flex space-x-2">
-                <NavLink to="/" className={linkClass}>
-                  Home
-                </NavLink>
-                <NavLink to="/jobs" className={linkClass}>
-                  Jobs
-                </NavLink>
-                <NavLink to="/login" className={linkClass}>
-                  Login
-                </NavLink>
-                <NavLink to="/register" className={linkClass}>
-                  Register
-                </NavLink>
-                <NavLink
-                  to="/add-job"
-                  className="text-rose-700 border border-white bg-white rounded-md px-4 py-2 hover:text-white hover:bg-rose-700"
-                >
-                  Add Job
-                </NavLink>
-              </div>
-            </div>
+            <NavLink to="/jobs" className={linkClass}>
+              Jobs
+            </NavLink>
+            <NavLink
+              to="/add-job"
+              className="text-rose-700 border border-white bg-white rounded-md px-4 py-2 hover:text-white hover:bg-rose-700"
+            >
+              Add Job
+            </NavLink>
           </div>
         </div>
       </div>
