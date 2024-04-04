@@ -1,9 +1,11 @@
-import { Hero } from "../components/Hero";
+import Hero from "./Hero";
+import RecentJobs from "./RecentJobs";
 
 const HomePage = () => {
   return (
     <>
       <Hero />
+      <RecentJobs />
     </>
   );
 };
