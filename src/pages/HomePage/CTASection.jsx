@@ -7,7 +7,7 @@ const CTASection = () => {
     <section className="py-8">
       <div className="container-xl lg:container m-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4 rounded-lg">
-          <Card>
+          <Card bg="bg-blue-50">
             <h2 className="text-2xl font-bold">For Developers</h2>
             <p className="mt-2 mb-4">
               Browse our React jobs and start your career today
