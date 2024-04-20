@@ -27,7 +27,7 @@ const Navbar = () => {
             </NavLink>
             <NavLink
               to="/add-job"
-              className="text-rose-700 border border-white bg-white rounded-md px-4 py-2 hover:text-white hover:bg-rose-700"
+              className="bg-rose-700 border border-white text-white rounded-md px-4 py-2 hover:bg-white hover:text-rose-700"
             >
               Add Job
             </NavLink>

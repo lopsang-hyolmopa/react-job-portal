@@ -7,8 +7,8 @@ const Footer = () => {
   const year = new Date().getFullYear();
 
   return (
-    <section className="bg-stone-800">
-      <div className="max-w-7xl mx-auto py-8 flex flex-col md:flex-row items-center justify-between gap-4">
+    <section className="bg-stone-950">
+      <div className="max-w-7xl mx-auto py-8 flex flex-col md:flex-row items-center justify-between gap-4 border-b border-white">
         <div className="flex items-center">
           <img className="h-10 w-auto" src={logo} alt="React Jobs Logo" />
           <span className="text-white text-2xl font-bold ml-2">React Jobs</span>
@@ -41,7 +41,6 @@ const Footer = () => {
           </Link>
         </div>
       </div>
-      <hr className="text-white max-w-7xl mx-auto" />
       <div className="text-white flex items-center justify-center py-4">
         <p>
           &copy; {year}{" "}

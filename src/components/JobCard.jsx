@@ -37,7 +37,7 @@ const JobCard = ({ job }) => {
 
         <hr className="border border-gray-100 mb-4" />
         <div className="flex justify-between items-center mb-2">
-          <p className="text-blue-700">{job.salary} / Year</p>
+          <p className="text-gray-500">{job.salary} / Year</p>
           <Link
             to={`/jobs/${job.id}`}
             className="flex items-center gap-1 border border-rose-700 rounded-lg text-rose-700 px-4 py-2 hover:bg-rose-700 hover:text-white"
