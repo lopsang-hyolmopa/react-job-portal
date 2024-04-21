@@ -16,14 +16,14 @@ const Pagination = ({ totalPages, setCurrentPage, currentPage }) => {
         breakLabel={<span className="mr-2">...</span>}
         previousLabel={
           showPrevButton ? (
-            <span className="size-10 flex items-center justify-center border border-indigo-100 bg-indigo-100 rounded-md mr-2 hover:bg-indigo-700 hover:text-white">
+            <span className="size-10 flex items-center justify-center border border-blue-100 bg-blue-100 rounded-md mr-2 hover:bg-blue-700 hover:text-white">
               <FaAngleLeft />
             </span>
           ) : null
         }
         nextLabel={
           showNextButton ? (
-            <span className="size-10 flex items-center justify-center border border-indigo-100 bg-indigo-100 rounded-md hover:bg-indigo-700 hover:text-white">
+            <span className="size-10 flex items-center justify-center border border-blue-100 bg-blue-100 rounded-md hover:bg-blue-700 hover:text-white">
               <FaAngleRight />
             </span>
           ) : null
@@ -33,8 +33,8 @@ const Pagination = ({ totalPages, setCurrentPage, currentPage }) => {
         pageCount={totalPages}
         renderOnZeroPageCount={null}
         containerClassName="flex items-center justify-center my-8"
-        pageClassName="flex items-center justify-center size-10 text-lg mr-2 bg-white border border-gray-300 rounded-md hover:bg-indigo-700 hover:text-white"
-        activeClassName="bg-indigo-700 text-white"
+        pageClassName="flex items-center justify-center size-10 text-lg mr-2 border border-gray-400 rounded-md hover:bg-blue-700 hover:text-white"
+        activeClassName="bg-blue-700 text-white border-none"
       />
     </div>
   );

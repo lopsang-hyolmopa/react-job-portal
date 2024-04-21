@@ -10,7 +10,7 @@ const RecentJobs = () => {
       <div className="mt-8">
         <Link
           to="/jobs"
-          className="flex items-center justify-center gap-1 bg-indigo-700 text-white text-center py-2 px-4 rounded-lg hover:bg-indigo-600"
+          className="flex items-center justify-center gap-1 bg-blue-700 text-white text-center py-2 px-4 rounded-lg hover:bg-blue-600"
         >
           View All Jobs
           <FaAngleRight className="text-lg" />

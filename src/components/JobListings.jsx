@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { bool } from "prop-types";
 
 import Spinner from "./Spinner";
@@ -13,13 +13,16 @@ const JobListings = ({ isHome = false }) => {
 
   useEffect(() => {
     const fetchJobs = async () => {
-      const apiUrl = isHome ? "/api/jobs?_limit=3" : "/api/jobs";
       try {
-        const res = await fetch(apiUrl);
+        const res = await fetch("/api/jobs");
         const data = await res.json();
-        setJobs(data);
+
+        const reversedData = data.reverse(); // reverse data as new added jobs should come first as recent jobs
+        const slicedData = isHome ? reversedData.slice(0, 3) : reversedData; // gets the first 3 recent jobs for home page
+
+        setJobs(slicedData);
       } catch (error) {
-        console.log("Error while fetching data", error);
+        console.error("Error while fetching data", error);
       } finally {
         setLoading(false);
       }
@@ -28,11 +31,13 @@ const JobListings = ({ isHome = false }) => {
     fetchJobs();
   }, [isHome]);
 
-  const totalPages = Math.ceil(jobs.length / itemsPerPage);
-  const filteredJobs = jobs.slice(
-    currentPage * itemsPerPage,
-    (currentPage + 1) * itemsPerPage
-  );
+  const totalPages = !isHome && Math.ceil(jobs.length / itemsPerPage);
+  const filteredJobs = useMemo(() => {
+    return jobs.slice(
+      currentPage * itemsPerPage,
+      (currentPage + 1) * itemsPerPage
+    );
+  }, [jobs, currentPage]);
 
   return (
     <div className="container-xl lg:container m-auto">
