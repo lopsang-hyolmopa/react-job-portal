@@ -17,21 +17,21 @@ const Navbar = () => {
             React Jobs
           </span>
         </NavLink>
-        <div className="md:ml-auto">
-          <div className="flex space-x-2">
+        <div className="md:ml-auto flex items-center">
+          <div className="mr-4">
             <NavLink to="/" className={linkClass}>
               Home
             </NavLink>
             <NavLink to="/jobs" className={linkClass}>
               Jobs
             </NavLink>
-            <NavLink
+          </div>
+          <NavLink
               to="/add-job"
               className="bg-rose-700 border border-white text-white rounded-md px-4 py-2 hover:bg-white hover:text-rose-700"
             >
               Add Job
             </NavLink>
-          </div>
         </div>
       </div>
     </nav>

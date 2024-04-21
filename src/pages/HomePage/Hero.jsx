@@ -23,7 +23,7 @@ export const Hero = () => {
             className="rounded-md w-1/2 py-2 px-3 mr-2"
             placeholder="Search by Jobs, title, keywords"
           />
-          <button className="text-white bg-indigo-700 py-2 px-6 rounded-md hover:bg-indigo-600">
+          <button className="text-white bg-blue-700 py-2 px-6 rounded-md hover:bg-blue-600">
             Search
           </button>
         </div>
