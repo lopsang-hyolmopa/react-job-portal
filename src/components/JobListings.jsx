@@ -41,9 +41,11 @@ const JobListings = ({ isHome = false }) => {
 
   return (
     <div className="container-xl lg:container m-auto">
-      <h2 className="text-3xl font-bold mb-6 text-center">
-        {isHome ? "Recent Jobs" : "Browse Jobs"}
-      </h2>
+      {isHome ? (
+        <h2 className="text-3xl font-bold mb-6 text-center">Recent Jobs</h2>
+      ) : (
+        <h2 className="text-3xl font-bold mb-6">{jobs.length} Job Listings</h2>
+      )}
       {loading ? (
         <Spinner loading={loading} />
       ) : (
