@@ -6,7 +6,6 @@ const Pagination = ({ totalPages, setCurrentPage, currentPage }) => {
   const handlePageClick = ({ selected }) => {
     setCurrentPage(selected);
   };
-  console.log(currentPage);
 
   const showPrevButton = currentPage !== 0;
   const showNextButton = currentPage !== totalPages - 1;
