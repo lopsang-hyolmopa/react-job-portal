@@ -143,6 +143,22 @@
         "contactEmail": "",
         "contactPhone": ""
       }
+    },
+    {
+      "id": "6b36",
+      "title": "Software Developer - React",
+      "experience": "Entry Level",
+      "type": "Full-Time",
+      "salary": "$60K - 70K",
+      "workplace": "Hybrid",
+      "description": "We are looking for a Software Developer II who will collaborate with other technology teams to build software systems and solutions architecture critical to our partners.",
+      "company": {
+        "name": "Moneris Solutions",
+        "location": "Burnaby, BC",
+        "description": "Moneris offers credit, debit, wireless and online payment services for merchants in virtually every industry segment and processes more than 3 billion transactions annually. Moneris offers electronic loyalty and stored-value gift card programs. With more than 350,000 merchant locations, Moneris provides the hardware, software and systems needed to improve business efficiency and manage payments.",
+        "contactEmail": "",
+        "contactPhone": ""
+      }
     }
   ]
 }

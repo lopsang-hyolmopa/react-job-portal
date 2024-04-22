@@ -1,9 +1,25 @@
-import { useLoaderData, Link } from "react-router-dom";
+import { useLoaderData, Link, useNavigate } from "react-router-dom";
 import { FaLocationDot, FaPencil, FaRegTrashCan } from "react-icons/fa6";
 import { AiOutlineRight } from "react-icons/ai";
+import { toast } from "react-toastify"
+
+import { deleteJob } from "../api";
 
 const JobDetailPage = () => {
   const job = useLoaderData();
+  const navigate = useNavigate()
+
+  const onDeleteClick = (jobId) => {
+    const confirm = window.confirm(
+      "Are you sure you want to delete this listing?"
+    );
+
+    if (!confirm) return;
+
+    deleteJob(jobId);
+    toast.success("Job listing deleted successfully.")
+    return navigate("/jobs")
+  };
   return (
     <section className="bg-gray-50">
       <div className="container m-auto py-6 px-6 flex items-center gap-1.5">
@@ -74,7 +90,10 @@ const JobDetailPage = () => {
               >
                 <FaPencil className="mr-2" /> Edit Job
               </Link>
-              <button className="flex items-center justify-center bg-white text-rose-700 border border-rose-700 py-2 px-4 rounded-lg w-full hover:bg-rose-700 hover:text-white">
+              <button
+                onClick={() => onDeleteClick(job.id)}
+                className="flex items-center justify-center bg-white text-rose-700 border border-rose-700 py-2 px-4 rounded-lg w-full hover:bg-rose-700 hover:text-white"
+              >
                 <FaRegTrashCan className="mr-2" /> Delete Job
               </button>
             </div>
