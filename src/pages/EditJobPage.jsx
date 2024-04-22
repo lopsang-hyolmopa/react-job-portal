@@ -1,29 +1,34 @@
 import { useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate, Link, useLoaderData, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import { AiOutlineRight } from "react-icons/ai";
 
-import { addJob } from "../api";
+import { editJob } from "../api";
 
-const AddJobPage = () => {
-  const [title, setTitle] = useState("");
-  const [experience, setExperience] = useState("No Experience Required");
-  const [type, setType] = useState("Full-Time");
-  const [salary, setSalary] = useState("Negotiable");
-  const [workplace, setWorkplace] = useState("On-site");
-  const [description, setDescription] = useState("");
-  const [companyName, setCompanyName] = useState("");
-  const [location, setLocation] = useState("");
-  const [contactEmail, setContactEmail] = useState("");
-  const [contactPhone, setContactPhone] = useState("");
-  const [companyDescription, setCompanyDescription] = useState("");
+const EditJobPage = () => {
+  const job = useLoaderData();
+  const [title, setTitle] = useState(job.title);
+  const [experience, setExperience] = useState(job.experience);
+  const [type, setType] = useState(job.type);
+  const [salary, setSalary] = useState(job.salary);
+  const [workplace, setWorkplace] = useState(job.workplace);
+  const [description, setDescription] = useState(job.description);
+  const [companyName, setCompanyName] = useState(job.company.name);
+  const [location, setLocation] = useState(job.company.location);
+  const [contactEmail, setContactEmail] = useState(job.company.contactEmail);
+  const [contactPhone, setContactPhone] = useState(job.company.contactPhone);
+  const [companyDescription, setCompanyDescription] = useState(
+    job.company.description
+  );
 
+  const { id } = useParams();
   const navigate = useNavigate();
 
   const submitHandler = (e) => {
     e.preventDefault();
 
-    const newJob = {
+    const editedJob = {
+      id,
       title,
       experience,
       type,
@@ -39,9 +44,9 @@ const AddJobPage = () => {
       },
     };
 
-    addJob(newJob);
-    toast.success("Job listing added successfully");
-    return navigate("/jobs");
+    editJob(editedJob);
+    toast.success("Job listing edited successfully");
+    return navigate(`/jobs/${job.id}`);
   };
 
   return (
@@ -49,13 +54,13 @@ const AddJobPage = () => {
       <div className="container m-auto py-6 px-6 flex items-center gap-1.5">
         <Link to="/">Home</Link>
         <AiOutlineRight />
-        <span className="text-blue-700">Add Job</span>
+        <span className="text-blue-700">Edit Job</span>
       </div>
       <div className="container m-auto max-w-2xl pb-8">
         <div className="bg-white p-6 shadow-md rounded-md border mx-4">
           <form onSubmit={submitHandler}>
             <h2 className="text-3xl font-semibold text-center mb-6">
-              Add Job Listing
+              Edit Job Listing
             </h2>
             <h3 className="text-rose-700 text-2xl my-2">Job Info</h3>
             <div className="mb-4">
@@ -274,7 +279,7 @@ const AddJobPage = () => {
                 className="bg-blue-700 hover:bg-blue-600 text-white py-2 px-4 rounded-md w-full focus:outline-none focus:shadow-outline"
                 type="submit"
               >
-                Add Job Listing
+                Edit Job Listing
               </button>
             </div>
           </form>
@@ -284,4 +289,4 @@ const AddJobPage = () => {
   );
 };
 
-export default AddJobPage;
+export default EditJobPage;

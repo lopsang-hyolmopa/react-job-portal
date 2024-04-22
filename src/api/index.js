@@ -10,4 +10,23 @@ const addJob = async (newJob) => {
   return;
 };
 
-export { addJob };
+// delete job
+const deleteJob = async (id) => {
+  await fetch(`/api/jobs/${id}`, {
+    method: "DELETE",
+  });
+};
+
+// edit job
+const editJob = async (job) => {
+  await fetch(`/api/jobs/${job.id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(job),
+  });
+  return;
+};
+
+export { addJob, deleteJob, editJob };
