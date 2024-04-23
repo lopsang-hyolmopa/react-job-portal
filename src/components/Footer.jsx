@@ -10,8 +10,8 @@ const Footer = () => {
     <section className="bg-stone-950">
       <div className="max-w-7xl mx-auto py-8 flex flex-col md:flex-row items-center justify-between gap-4 border-b border-white">
         <div className="flex items-center">
-          <img className="h-10 w-auto" src={logo} alt="React Jobs Logo" />
-          <span className="text-white text-2xl font-bold ml-2">React Jobs</span>
+          <img className="h-10 w-auto" src={logo} alt="React Dev Jobs Logo" />
+          <span className="text-white text-2xl font-bold ml-2">React Dev Jobs</span>
         </div>
         <div className="text-white">
           <ul className="flex flex-col md:flex-row text-center gap-2 md:gap-4">
