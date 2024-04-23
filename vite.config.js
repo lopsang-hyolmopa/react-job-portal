@@ -14,5 +14,5 @@ export default defineConfig({
       }
     }
   },
-  // base: "{repName}"
+  base: "{repName}"
 })
