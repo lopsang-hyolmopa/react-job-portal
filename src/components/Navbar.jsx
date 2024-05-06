@@ -14,7 +14,7 @@ const Navbar = () => {
         <NavLink to="/" className="flex flex-shrink-0 items-center mr-4">
           <img className="h-10 w-auto" src={logo} alt="React Dev Jobs Logo" />
           <span className="hidden md:block text-white text-2xl font-bold ml-2">
-            React Dev Jobs
+            ReactDevJobs
           </span>
         </NavLink>
         <div className="md:ml-auto flex items-center">
